@@ -67,10 +67,10 @@ class AppPages {
       page: () => const ProfilView(),
       binding: ProfilBinding(),
     ),
-    //GetPage(
-    // name: _Paths.KOLEKSI,
-    //  page: () => const KoleksiView(),
-    //  binding: KoleksiBinding(),
-    // ),
+    GetPage(
+      name: _Paths.KOLEKSI,
+      page: () => const KoleksiView(),
+      binding: KoleksiBinding(),
+    ),
   ];
 }

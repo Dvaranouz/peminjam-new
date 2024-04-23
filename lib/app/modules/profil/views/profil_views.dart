@@ -106,6 +106,38 @@ class _HomeViewState extends State<ProfilView> {
               SizedBox(height: 10),
               TextButton(
                 style: TextButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.all(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  backgroundColor: const Color(0x624235),
+                ),
+                onPressed: () {
+                  Get.toNamed(
+                    Routes.KOLEKSI,
+                  );
+                },
+                child: Row(
+                  children: [
+                    const SizedBox(width: 20),
+                    Expanded(
+                        child: Text(
+                      "Koleksiku",
+                      style: GoogleFonts.inter(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    )),
+                    const Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              TextButton(
+                style: TextButton.styleFrom(
                   foregroundColor: Colors.red,
                   padding: const EdgeInsets.all(20),
                   shape: RoundedRectangleBorder(

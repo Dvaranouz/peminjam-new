@@ -127,54 +127,92 @@ class DetailbookView extends GetView<DetailbookController> {
                                             ),
                                           ),
                                         ),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Get.toNamed(
-                                              Routes.ADD_PEMINJAMAN,
-                                              parameters: {
-                                                'id': (state[index].id ?? 0)
-                                                    .toString(),
-                                                'judul':
-                                                    state[index].judul ?? ""
-                                              },
-                                            );
-                                          },
-                                          style: ElevatedButton.styleFrom(
-                                            padding: EdgeInsets.zero,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                          ),
-                                          child: Ink(
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Colors.red.shade800,
-                                                  Colors.black
-                                                ],
-                                                begin: Alignment.centerLeft,
-                                                end: Alignment.centerRight,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                            child: Container(
-                                              constraints:
-                                                  BoxConstraints(minWidth: 100),
-                                              alignment: Alignment.center,
-                                              child: Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 20,
-                                                    vertical: 15),
-                                                child: Text('Pinjam',
-                                                    style: TextStyle(
-                                                        fontSize: 16,
-                                                        color: Colors.white)),
-                                              ),
+                                        Container(
+                                          child: Form(
+                                            key: controller.formKey,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 20.0, left: 20.0),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      InkWell(
+                                                        onTap: () {
+                                                          Get.toNamed(
+                                                              Routes
+                                                                  .ADD_PEMINJAMAN,
+                                                              parameters: {
+                                                                'id': (state[index]
+                                                                            .id ??
+                                                                        0)
+                                                                    .toString(),
+                                                                'judul': state[
+                                                                            index]
+                                                                        .judul ??
+                                                                    ""
+                                                              });
+                                                        },
+                                                        child: Container(
+                                                          width: 300,
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10),
+                                                            color: Color(
+                                                                0xffE1BEE7),
+                                                          ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              'Pinjam',
+                                                              style: GoogleFonts
+                                                                  .inriaSans(
+                                                                fontSize: 20,
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .normal,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.grey[300],
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10)),
+                                                  child: IconButton(
+                                                    icon: Icon(Icons.favorite),
+                                                    color: Colors.red,
+                                                    onPressed: () {
+                                                      controller.post();
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
+                                        SizedBox(height: 12),
                                       ],
                                     ),
                                   ),
