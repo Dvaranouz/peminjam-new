@@ -6,7 +6,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:peminjam_perpustakaan_app/app/routes/app_pages.dart';
-import 'package:peminjam_perpustakaan_app/app/data/model/response_buku.dart';
 import '../controllers/detailbook_controller.dart';
 
 class DetailbookView extends GetView<DetailbookController> {
